@@ -1,12 +1,12 @@
-Spaceship
+#Spaceship
 
 We will build a 2D space game RiceRocks that is inspired by the classic arcade game Asteroids (1979). Asteroids is a relatively simple game by today's standards, but was still immensely popular during its time. (Joe spent countless quarters playing it.) In the game, the player controls a spaceship via four buttons: two buttons that rotate the spaceship clockwise or counterclockwise (independent of its current velocity), a thrust button that accelerates the ship in its forward direction and a fire button that shoots missiles. Large asteroids spawn randomly on the screen with random velocities. The player's goal is to destroy these asteroids before they strike the player's ship. In the arcade version, a large rock hit by a missile split into several fast moving small asteroids that themselves must be destroyed. Occasionally, a flying saucer also crosses the screen and attempts to destroy the player's spaceship. Searching for "asteroids arcade" yields links to multiple versions of Asteroids that are available on the web (including an updated version by Atari, the original creator of Asteroids).
 
-Mini-project development process 
+##Mini-project development process 
 
-We highly recommend using Chrome for this project.
+**_We highly recommend using Chrome for this project._**
 
-Phase one - Spaceship
+**Phase one - Spaceship**
 
 In this phase, you will implement the control scheme for the spaceship.This includes a complete Spaceship class and the appropriate keyboard handlers to control the spaceship. Your spaceship should behave as follows:
 
@@ -29,8 +29,7 @@ Then, modify the ship's update method such that the ship's position wraps around
 Up to this point, your ship will never slow down. Finally, add friction to the ship's update method as shown in the "Acceleration and Friction" video by multiplying each component of the velocity by a number slightly less than 1 during each update.
 You should now have a ship that flies around the screen,as you would like for RiceRocks. Adjust the constants as you would like to get it to fly how you want.
 
-
-Phase two - Rocks
+**Phase two - Rocks**
 
 To implement rocks, we will use the provided Sprite class. Note that the update method for the sprite will be very similar to the update method for the ship. The primary difference is that the ship's velocity and rotation are controlled by keys, whereas sprites have these set randomly when they are created. Rocks should screen wrap in the same manner as the ship.
 
@@ -39,8 +38,7 @@ In the template, the global variable a_rock is created at the start with zero ve
 Complete the Sprite class (as shown in the "Sprite class" video) by modifying the draw handler to draw the actual image and the update handler to make the sprite move and rotate. Rocks do not accelerate or experience friction, so the sprite update method should be simpler than the ship update method. Test this by giving a_rock different starting parameters and ensuring it behaves as you expect.
 Implement the timer handler rock_spawner. In particular, set a_rock to be a new rock on every tick. (Don't forget to declare a_rock as a global in the timer handler.) Choose a velocity, position, and angular velocity randomly for the rock. You will want to tweak the ranges of these random numbers, as that will affect how fun the game is to play. Make sure you generated rocks that spin in both directions and, likewise, move in all directions.
 
-
-Phase three - Missiles
+**Phase three - Missiles**
 
 To implement missiles, we will use the same sprite class as for rocks. Missiles will always have a zero angular velocity. They will also have a lifespan (they should disappear after a certain amount of time or you will eventually have missiles all over the place), but we will ignore that this week. Also, for now, we will only allow a single missile and it will not yet blow up rocks. We'll add more next week.
 
@@ -50,7 +48,6 @@ Add a shoot method to your ship class. This should spawn a new missile (for now 
 Modify the keydown handler to call this shoot method when the spacebar is pressed.
 Make sure that the missile sound is passed to the sprite initializer so that the shooting sound is played whenever you shoot a missile.
 
-
-Phase four - User interface
+**Phase four - User interface**
 
 Our user interface for RiceRocks simply shows the number of lives remaining and the score. This week neither of those elements ever change, but they will next week. Add code to the draw event handler to draw these on the canvas. Use the lives and score global variables as the current lives remaining and score.
