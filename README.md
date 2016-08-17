@@ -1,3 +1,5 @@
 These are small projects that I have completed as assignments for the "An Introduction to Interactive Programming in Python" on Coursera (sorted in order of increasing difficulty)
 
 All programs are run on Codeskulptor, an interactive, web-based Python programming environment that allows Python code to be run in a web browser. http://www.codeskulptor.org/
+
+5) Blackjack is a simple, popular card game that is played in many casinos. Cards in Blackjack have the following values: an ace may be valued as either 1 or 11 (player's choice), face cards (kings, queens and jacks) are valued at 10 and the value of the remaining cards corresponds to their number. During a round of Blackjack, the players plays against a dealer with the goal of building a hand (a collection of cards) whose cards have a total value that is higher than the value of the dealer's hand, but not over 21. In this simplified version of Blackjack, a hand is automatically dealt to the player and dealer when the program starts. In particular, the program template includes a call to the deal() function during initialization.
